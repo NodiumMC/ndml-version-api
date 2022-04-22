@@ -15,7 +15,7 @@ export type VersionType = {
   releaseTime: string
 }
 
-export type VanillaVersionsResponseType = {
+type VanillaVersionsResponseType = {
   latest: {
     release: string
     snapshot: string
@@ -23,12 +23,12 @@ export type VanillaVersionsResponseType = {
   versions: VersionType[]
 }
 
-export type FabricVersionType = {
+type FabricVersionType = {
   version: string
   stable: boolean
 }
 
-export type LoadersResponseType = {
+type LoadersResponseType = {
   loader: {
     version: string
   }
