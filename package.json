@@ -1,0 +1,48 @@
+{
+  "name": "@ndml/version-api",
+  "version": "1.0.0",
+  "description": "Minecraft version api impl for launcher",
+  "main": "lib/index.cjs",
+  "module": "lib/index.mjs",
+  "author": "LIMPIX31",
+  "license": "MIT",
+  "types": "./lib/types/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NodiumMC/ndml-version-api.git"
+  },
+  "homepage": "https://github.com/NodiumMC/ndml-version-api",
+  "bugs": {
+    "url": "https://github.com/NodiumMC/ndml-version-api/issues"
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "scripts": {
+    "build:script": "esbuild index.ts --bundle --minify --platform=node --external:./node_modules/*",
+    "build:cjs": "yarn build:script --format=cjs --outfile=./lib/index.cjs",
+    "build:esm": "yarn build:script --format=esm --outfile=./lib/index.mjs",
+    "build": "tsc && yarn build:cjs && yarn build:esm",
+    "prepare": "yarn build",
+    "version": "yarn format && git add -A",
+    "postversion": "git push && git push --tags",
+    "format": "prettier --write \"*.ts\""
+  },
+  "exports": {
+    "require": "./lib/index.cjs",
+    "import": "./lib/index.mjs",
+    "default": "./lib/index.cjs"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.25",
+    "esbuild": "^0.14.38",
+    "prettier": "^2.6.2",
+    "typescript": "^4.6.3",
+    "yarn": "^1.22.18"
+  },
+  "dependencies": {
+    "@ndml/types": "^1.0.1",
+    "axios": "^0.26.1",
+    "fast-xml-parser": "^4.0.7"
+  }
+}
