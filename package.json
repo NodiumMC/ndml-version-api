@@ -1,6 +1,6 @@
 {
   "name": "@ndml/version-api",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Minecraft version api impl for launcher",
   "main": "lib/index.js",
   "author": "LIMPIX31",
